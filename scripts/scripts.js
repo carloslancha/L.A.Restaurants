@@ -81,7 +81,25 @@
     function bindCollapse() {
       var link = node.getElementsByTagName( 'a' )[ 0 ];
       link.addEventListener( 'click', function () {
-        node.classList.toggle( 'collapsed' );
+        if ( node.classList ) {
+          node.classList.toggle( 'collapsed' );
+        } else {
+          var classes = node.className.split( ' ' ),
+            collapsed;
+          for ( var i = 0, l = classes.length; i < l; i++ ) {
+            if ( classes[ i ] === 'collapsed' ) {
+              collapsed = true;
+              classes[ i ] = '';
+              break;
+            }
+          }
+
+          if ( !collapsed ) {
+            classes.push( 'collapsed' );
+          }
+
+          node.className = classes.join( ' ' );
+        }
       } );
     }
 
@@ -177,6 +195,7 @@
 
     var iconNode = document.createElement( 'img' );
     iconNode.setAttribute( 'src', restaurant.icon );
+    iconNode.setAttribute( 'width', '15px' );
     iconNode.setAttribute( 'height', '15px' );
     iconNode.setAttribute( 'style', 'float: left;' );
 
