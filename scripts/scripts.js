@@ -145,7 +145,6 @@
       types: [ 'restaurant' ],
       name: searchKey,
       onPlacesReceived: function ( results ) {
-        console.log( results );
         var category = new Category( {
           node: document.getElementById( id ),
           name: name,
