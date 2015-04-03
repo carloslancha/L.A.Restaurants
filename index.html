@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Restaurants in Los Ángeles, CA.</title>
+	<link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+</head>
+<body>
+
+	<div id="wrapper">
+		<div id="menu">
+			<form id="search">
+			  <input id="search-input" type="text" placeholder="Searching" />
+			</form>
+			<ul class="categories">
+				<li id="japanese-restaurants">
+					<a class="category">Japanese Restaurants</a>
+					<ul></ul>
+				</li>
+				<li id="korean-restaurants">
+					<a class="category">Korean Restaurants</a>
+					<ul></ul>
+				</li>
+				<li id="american-restaurants">
+					<a class="category">American Restaurants</a>
+					<ul></ul>
+				</li>
+			</ul>
+		</div>
+		<div id="map">
+		</div>
+	</div>
+
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true_or_false"></script>
+	<script type="text/javascript" src="scripts/scripts.js"></script>
+</body>
+</html>
